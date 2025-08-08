@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Login - AlgoHeap</title>
+  <link rel="icon" type="image/png" th:href="@{/image/logo.png}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" th:href="@{/style/header.css}">
+  <link rel="stylesheet" th:href="@{/style/global.css}">
+</head>
+
+<body>
+  <header>
+    <div class="left-side d-flex align-items-center gap-3">
+      <a th:href="@{/}" class="text-white text-decoration-none fs-4 fw-bold">AlgoHeap</a>
+    </div>
+
+    <div class="right-side">
+      <nav>
+        <ul class="list-unstyled d-flex gap-3 mb-0">
+          <li><a th:href="@{/about}" class="text-white text-decoration-none">About me</a></li>
+          <li><a th:href="@{/contact}" class="text-white text-decoration-none">Contact me</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </header>
+
+  <div class="d-flex justify-content-center align-items-center" style="height: 100vh; background: #065A60;">
+    <form method="post" th:object="${user}" class="p-4 rounded shadow"
+      style="min-width: 320px; max-width: 400px; width: 100%; background: #0B525B; color: #FFFFFF;">
+      <h3 class="mb-4 text-center" style="color: #00A499;">Log in to your account</h3>
+
+      <div class="mb-3">
+        <label for="name" class="form-label" style="color: #4D194D;">Username</label>
+        <input type="text" th:field="*{name}" class="form-control" id="name" required
+          style="background: #144552; border: none; color: #FFFFFF;">
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label" style="color: #4D194D;">Password</label>
+        <input type="password" th:field="*{password}" class="form-control" id="password" required
+          style="background: #144552; border: none; color: #FFFFFF;">
+      </div>
+
+      <div class="mb-3">
+        <span style="color: #4D194D;" th:if="${#fields.hasErrors('name') || #fields.hasErrors('password')}" th:errors="*{name}">
+          VALIDATION
+        </span>
+      </div>
+      <button type="submit" class="btn w-100 mb-3" style="background: #006466; color: #FFFFFF; border: none;">
+        Log in
+      </button>
+
+      <div class="text-center" style="color: #3E1F47;">
+        Don't have an account yet? <a th:href="@{/users/register}"
+          style="color: #00A499; text-decoration: underline;">Register</a>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

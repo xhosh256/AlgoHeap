@@ -1,0 +1,38 @@
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60px;
+  background-color: #0B525B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.right-side a {
+  transition: opacity 0.15s;
+}
+
+.right-side a:hover {
+  opacity: 0.7;
+}
+
+ul.d-flex {
+  align-items: center;
+}
+
+ul.d-flex>li {
+  display: flex;
+  align-items: center;
+}
+
+.right-side {
+  font-size: 20px;
+}
+
+.avatar {
+  border-radius: 50px;
+}

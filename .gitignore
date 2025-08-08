@@ -34,3 +34,4 @@ build/
 
 ### Project ###
 /src/main/resources/application.yaml
+/src/main/resources/static/image/pallete.png
