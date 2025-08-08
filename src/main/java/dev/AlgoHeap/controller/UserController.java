@@ -47,6 +47,7 @@ public class UserController {
         return "redirect:/";
     }
 
+
     @PostMapping("/register")
     public String processRegister(
         @ModelAttribute("user") User user,
@@ -68,7 +69,7 @@ public class UserController {
         if(user == null) {
             errors.rejectValue("name", "error.user", "Incorrect username or password");
             errors.rejectValue("password", "error.user", "Incorrect username or password");
-            return "loginPage";
+            return "users/loginPage";
         }
 
         session.setAttribute("user", user);

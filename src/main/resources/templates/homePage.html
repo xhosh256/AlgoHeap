@@ -37,7 +37,7 @@
               <img class="avatar dropdown-toggle" th:src="@{/image/avatarfiller.png}" width="30" height="30"
                 role="button" data-bs-toggle="dropdown" aria-expanded="false" id="avatarDropdown">
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarDropdown">
-                <li><a class="dropdown-item" th:href="@{/users/{id}(id=${session.user.id})}">Перейти в профиль</a></li>
+                <li><a class="dropdown-item" th:href="@{/users/{name}(name=${session.user.name})}">Перейти в профиль</a></li>
                 <li><a class="dropdown-item" th:href="@{/users/logout}">Выйти из аккаунта</a></li>
               </ul>
             </div>
